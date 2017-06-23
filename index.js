@@ -1,13 +1,13 @@
 const text = require('./hello');
 (() => {
   console.log('es6');
-})()
+})();
 let mike = {
   name: 'mike',
-  sex: 'male'
+  sex: 'male',
 };
 mike = { ...mike,
-  age: 20
+  age: 20,
 };
 console.log(mike);
 require('./index.css');

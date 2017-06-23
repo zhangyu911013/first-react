@@ -1,12 +1,27 @@
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin  = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const ROOT_PATH = path.resolve(__dirname);
+const BUILD_PATH = path.resolve(ROOT_PATH, 'build');
+const APP_PATH = path.resove(ROOT_PATH, 'app');
+
 module.exports = {
-  entry: path.join(__dirname, 'index'),
+  entry: {
+    app: path.resolve(APP_PATH, 'app.jsx'),
+  },
   output: {
-    path: __dirname,
+    path: BUILD_PATH,
     filename: 'bundle.js'
   },
+
+  devtool: 'eval-source-map',
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    progress: true,
+  }
   module: {
     loaders: [
       {
@@ -15,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loaders:['babel-loader'],
+        loaders: ['babel-loader'],
       }
     ]
   },
