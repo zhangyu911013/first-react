@@ -2,10 +2,12 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    "es6": true
   },
   extends: 'airbnb-base',
   plugins: [
-    'import'
+    'import',
+    'react'
   ],
   rules: {
     'indent': 0,
@@ -32,6 +34,12 @@ module.exports = {
   },
   globals: {
     angular: true,
-    moment: true
+    moment: true,
+    React: true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
 };
