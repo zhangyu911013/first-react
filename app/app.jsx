@@ -1,9 +1,9 @@
 import 'babel-polyfill';
-import 'bootstrap/scss/bootstrap.sass';
+import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Deskmark from 'components/Deskmark';
+import Deskmark from './components/Deskmark';
 
 const app = document.createElement('div');
 document.body.appendChild(app);
